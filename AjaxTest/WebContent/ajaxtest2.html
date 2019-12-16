@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var timerID;
+$(document).ready(function () {
+    $('#execute').on('click',function(e){
+        e.preventDefault();
+        updateData();
+    });
+    $('#stop').on('click',function(e){
+        e.preventDefault();
+        clearTimeout(timerID); // 타이머 중지
+        $('#showtime').html('');
+    });    
+});
+function updateData(){
+ 	$.ajax({
+		url:"GetServer",
+		type:"get",
+		cache:false,
+		success:function(data){
+			$("#showtime").html(data);
+	}
+	});
+ 	timerID=setTimeout("updateDate()",2000);
+}
+</script>
+</head>
+<body>
+	<p>time:<span id="showtime"></span></p>
+	<input type="button" id="execute" value="실행" />
+	<input type="button" id="stop" value="중지" />
+</body>
+</html>

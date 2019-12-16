@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function updateData(){
+ 	$.ajax({
+		url:"GetServer",
+		type:"get",
+		cache:false,
+		success:function(data){
+			$("#showtime").html(data);
+	}
+	});
+ 	timerID=setTimeout("updateDate()",2000);
+}
+</script>
+현재 초는 <span id="showtime"></span>입니다.
+</head>
+<body>
+</body>
+</html>

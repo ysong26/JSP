@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+현재 초는 <span id="showtime"></span>입니다.
+<button id="execute">확인</button>
+
+<script>
+$("#execute").click(function(){
+	 	$.ajax({
+ 		url:"GetServer",
+ 		type:"get",
+ 		cache:false,
+ 		success:function(data){
+ 			$("#showtime").text(data);
+ 	}
+ 	});
+});
+</script>
+</body>
+</html>
