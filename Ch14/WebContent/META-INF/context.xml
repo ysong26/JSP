@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+	<Resource name="jdbc/testdb"
+	auth="container"
+	type="javax.sql.DataSource"
+	username="java"
+	password="java"
+	driverClassName="org.mariadb.jdbc.Driver"
+	factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	url="jdbc:mariadb://192.168.0.150:3307/testdb"
+	maxTotal="100"
+	maxIdle="4"/>
+</context>
